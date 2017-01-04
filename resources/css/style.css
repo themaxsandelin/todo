@@ -39,7 +39,7 @@ header input {
   text-indent: 18px;
   padding: 0 60px 0 0;
   background: rgba(255, 255, 255, 0.2);
-  border-radius: 5px 25px 5px 25px;
+  border-radius: 5px 25px 25px 5px;
   border: 0px;
   box-shadow: none;
   outline: none;
