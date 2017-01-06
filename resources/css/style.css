@@ -16,13 +16,13 @@ body, input, button {
 header {
   width: 100%;
   height: 80px;
-  
+
   position: fixed;
   padding: 15px;
   top: 0;
   left: 0;
   z-index: 5;
-  
+
   background: #25b99a;
   box-shadow: 0px 2px 4px rgba(44, 62, 80, 0.15);
   border-bottom-right-radius: 10px;
@@ -43,7 +43,7 @@ header input {
   border: 0px;
   box-shadow: none;
   outline: none;
-  
+
   -webkit-appearance: none;
   -moz-appearance: none;
 }
@@ -67,19 +67,19 @@ header input:-ms-input-placeholder {
 header button {
   width: 50px;
   height: 50px;
-  
+
   position:absolute;
   top:15px;
   right:15px;
   z-index:2;
-  
+
   border-radius: 25px;
   background: #fff;
   border: 0px;
   box-shadow: none;
   outline: none;
   cursor: pointer;
-  
+
   -webkit-appearance: none;
   -moz-appearance: none;
 }
@@ -87,11 +87,11 @@ header button {
 header button svg {
   width: 16px;
   height: 16px;
-  
+
   position: absolute;
   top: 50%;
   left: 50%;
-  
+
   margin: -8px 0 0 -8px;
 }
 
@@ -118,7 +118,7 @@ ul.todo li {
   font-weight: 500;
   color: #444;
   line-height: 22px;
-  
+
   background: #fff;
   border-radius: 5px;
   position: relative;
@@ -134,7 +134,7 @@ ul.todo li:last-of-type {
 ul.todo li .buttons {
   width: 100px;
   height: 50px;
-  
+
   position: absolute;
   top: 0;
   right: 0;
@@ -150,7 +150,7 @@ ul.todo li .buttons button {
   box-shadow: none;
   outline: none;
   cursor: pointer;
-  
+
   -webkit-appearance: none;
   -moz-appearance: none;
 }
@@ -160,7 +160,7 @@ ul.todo li .buttons button:last-of-type:before {
   width: 1px;
   height: 30px;
   background: #edf0f1;
-  
+
   position: absolute;
   top: 10px;
   left: 0;
@@ -169,18 +169,18 @@ ul.todo li .buttons button:last-of-type:before {
 ul.todo li .buttons button svg {
   width: 22px;
   height: 22px;
-  
+
   position: absolute;
   top: 50%;
   left: 50%;
-  
+
   margin: -11px 0 0 -11px;
 }
 
 ul.todo li .buttons button.complete svg {
   border-radius: 11px;
   border: 1.5px solid #25b99a;
-  
+
   transition: background 0.2s ease;
 }
 
@@ -227,11 +227,11 @@ ul.todo#completed:before {
   width: 150px;
   height: 1px;
   background: #d8e5e0;
-  
+
   position: absolute;
   top: 30px;
   left: 50%;
-  
+
   margin: 0 0 0 -75px;
 }
 
