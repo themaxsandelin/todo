@@ -236,12 +236,12 @@ ul.todo#completed:before {
 }
 
 ul.todo#todo:empty:after {
-  content: 'You have nothing to-do!';
+  content: 'Nemam ništa na listi za skuvat!';
   margin: 15px 0 0 0;
 }
 
 ul.todo#completed:empty:after {
-  content: 'You have yet to complete any tasks.';
+  content: 'Nisi skuva još ništa sa liste !!!';
 }
 
 ul.todo#todo:after,
