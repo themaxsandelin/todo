@@ -125,6 +125,7 @@ ul.todo li {
   box-shadow: 0px 1px 2px rgba(44, 62, 80, 0.10);
   margin: 0 0 10px 0;
   padding: 14px 100px 14px 14px;
+  word-break: break-word;
 }
 
 ul.todo li:last-of-type {
