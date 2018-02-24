@@ -7,4 +7,6 @@ api.listen(3000, ()=> {
 
 api.get('/', (req, res) => {
     res.send("hey");
+    console.log(req);
 });
+//test
