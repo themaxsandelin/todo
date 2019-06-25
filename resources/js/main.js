@@ -114,7 +114,6 @@ function editItem() {
         item.appendChild(inputConfirm);
     } else {
         editedValue = item.querySelector('.input__edit').value;
-
         item.querySelector('.input__edit').remove();
         item.querySelector('.input__edit-confirm').remove();
         item.querySelector('.buttons').style.display = '';
