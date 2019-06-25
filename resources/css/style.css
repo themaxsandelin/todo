@@ -135,7 +135,7 @@ ul.todo li:last-of-type {
 ul.todo li .buttons {
   width: 100px;
   height: 50px;
-
+  display: flex;
   position: absolute;
   top: 0;
   right: 0;
@@ -156,7 +156,7 @@ ul.todo li .buttons button {
   -moz-appearance: none;
 }
 
-ul.todo li .buttons button:last-of-type:before {
+ul.todo li .buttons button:not(:first-of-type):before {
   content: '';
   width: 1px;
   height: 30px;
@@ -214,8 +214,38 @@ ul.todo li .buttons button.remove:hover svg .fill {
   fill: #e85656;
 }
 
+ul.todo li .buttons button.edit svg {
+  fill: #a4a0a4;
+}
+
+ul.todo li .buttons button.edit:hover svg {
+  fill: #000000;
+}
+
 ul.todo li .buttons button.complete svg .fill {
   fill: #25b99a;
+}
+
+ul.todo li .buttons button.complete:hover:after {
+  content: 'Done';
+  left: -30%;
+}
+
+ul.todo li .buttons button.remove:hover:after {
+  content: 'Remove';
+}
+
+ul.todo li .buttons button.edit:hover:after {
+  content: 'Edit';
+}
+
+ul.todo li .buttons button.edit:hover:after {
+  left: -10px;
+}
+
+ul.todo#completed li .buttons button.complete:hover:after {
+  content: 'Back to active';
+  left: -110%;
 }
 
 ul.todo#completed {
@@ -253,3 +283,57 @@ ul.todo#completed:after {
   font-size: 12px;
   color: #aaa;
 }
+
+.input__edit {
+  height: 30px;
+  font-size: 15px;
+  width: 95%;
+  padding: 10px;
+}
+
+.input__edit-confirm {
+  width: 65px;
+  height: 30px;
+  font-size: 15px;
+  margin: 0 25px;
+  position: absolute;
+  right: 0;
+  border-radius: 25px;
+  font-weight: bold;
+  color: #258470;
+  border: 2px solid #32bda0;
+}
+
+.input__edit-confirm:hover {
+  background: rgba(37, 185, 154, 0.75);
+  color: #ffffff;
+  cursor: pointer;
+}
+
+ul.todo li .buttons button:hover:after {
+  white-space: nowrap;
+  font-size: 14px;
+  color: white;
+  background-color: black;
+  padding: 5px 10px;
+  position: absolute;
+  left: 0;
+  top: 47px;
+  border-radius: 4px;
+  z-index: 1;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+ul.todo li .buttons button:hover:before {
+  height: 7px;
+  width: 7px;
+  background-color: black;
+  padding: 1px 1px;
+  position: absolute;
+  left: 13px;
+  top: 43px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  content: '';
+  transform: rotate(45deg);
+}
+
