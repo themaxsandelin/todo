@@ -84,7 +84,7 @@ function completeItem() {
   dataObjectUpdated();
 
   // Check if the item should be added to the completed list or to re-added to the todo list
-  var target = (id === 'todo') ? document.getElementById('completed'):document.getElementById('todo');
+  let target = (id === 'todo') ? document.getElementById('completed'):document.getElementById('todo');
 
   parent.removeChild(item);
   target.insertBefore(item, target.childNodes[0]);
