@@ -13,14 +13,14 @@ renderTodoList();
 // User clicked on the add button
 // If there is any text inside the item field, add that text to the todo list
 document.getElementById('add').addEventListener('click', function() {
-  var value = document.getElementById('item').value;
+  let value = document.getElementById('item').value;
   if (value) {
     addItem(value);
   }
 });
 
 document.getElementById('item').addEventListener('keydown', function (e) {
-  var value = this.value;
+  let value = this.value;
   if ((e.code === 'Enter' || e.code === 'NumpadEnter') && value) {
     addItem(value);
   }
@@ -37,7 +37,7 @@ function addItem (value) {
 function renderTodoList() {
   if (!data.todo.length && !data.completed.length) return;
 
-  for (var i = 0; i < data.todo.length; i++) {
+  for (let i = 0; i < data.todo.length; i++) {
     var value = data.todo[i];
     addItemToDOM(value);
   }
