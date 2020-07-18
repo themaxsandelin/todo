@@ -13,13 +13,14 @@ renderTodoList();
 // User clicked on the add button
 // If there is any text inside the item field, add that text to the todo list
 function addItemValue() {
-  
-}
-document.getElementById('add').addEventListener('click', function() {
-  let value = document.getElementById('item').value;
-  if (value) {
-    addItem(value);
-  }
+  function() {
+    let value = document.getElementById('item').value;
+    if (value) {
+      addItem(value);
+    }
+ }
+
+document.getElementById('add').addEventListener('click', 
 });
 
 document.getElementById('item').addEventListener('keydown', function (e) {
