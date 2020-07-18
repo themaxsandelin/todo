@@ -18,14 +18,18 @@ function addItemValue() {
       addItem(value);
     }
   }
-document.getElementById('add').addEventListener('click', addItemValue);
 
-document.getElementById('item').addEventListener('keydown', function (e) {
+function addItemKeypress(e) {
   let value = this.value;
   if ((e.code === 'Enter' || e.code === 'NumpadEnter') && value) {
     addItem(value);
   }
-});
+}
+
+
+document.getElementById('add').addEventListener('click', addItemValue);
+
+document.getElementById('item').addEventListener('keydown', );
 
 function addItem (value) {
   addItemToDOM(value);
