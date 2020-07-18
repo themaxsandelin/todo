@@ -69,10 +69,10 @@ function removeItem() {
 }
 
 function completeItem() {
-  var item = this.parentNode.parentNode;
-  var parent = item.parentNode;
-  var id = parent.id;
-  var value = item.innerText;
+  let item = this.parentNode.parentNode;
+  let parent = item.parentNode;
+  let id = parent.id;
+  let value = item.innerText;
 
   if (id === 'todo') {
     data.todo.splice(data.todo.indexOf(value), 1);
