@@ -38,12 +38,12 @@ function renderTodoList() {
   if (!data.todo.length && !data.completed.length) return;
 
   for (let i = 0; i < data.todo.length; i++) {
-    var value = data.todo[i];
+    let value = data.todo[i];
     addItemToDOM(value);
   }
 
-  for (var j = 0; j < data.completed.length; j++) {
-    var value = data.completed[j];
+  for (let j = 0; j < data.completed.length; j++) {
+    let value = data.completed[j];
     addItemToDOM(value, true);
   }
 }
@@ -53,10 +53,10 @@ function dataObjectUpdated() {
 }
 
 function removeItem() {
-  var item = this.parentNode.parentNode;
-  var parent = item.parentNode;
-  var id = parent.id;
-  var value = item.innerText;
+  let item = this.parentNode.parentNode;
+  let parent = item.parentNode;
+  let id = parent.id;
+  let value = item.innerText;
 
   if (id === 'todo') {
     data.todo.splice(data.todo.indexOf(value), 1);
