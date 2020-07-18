@@ -18,8 +18,7 @@ function addItemValue() {
       addItem(value);
     }
   }
-document.getElementById('add').addEventListener('click', 
-);
+document.getElementById('add').addEventListener('click', addItemValue);
 
 document.getElementById('item').addEventListener('keydown', function (e) {
   let value = this.value;
