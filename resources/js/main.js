@@ -29,7 +29,7 @@ function addItemKeypress(e) {
 
 document.getElementById('add').addEventListener('click', addItemValue);
 
-document.getElementById('item').addEventListener('keydown', );
+document.getElementById('item').addEventListener('keydown', addItemKeypress);
 
 function addItem (value) {
   addItemToDOM(value);
