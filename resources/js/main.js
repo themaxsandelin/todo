@@ -92,12 +92,12 @@ function completeItem() {
 
 // Adds a new item to the todo list
 function addItemToDOM(text, completed) {
-  var list = (completed) ? document.getElementById('completed'):document.getElementById('todo');
+  let list = (completed) ? document.getElementById('completed'):document.getElementById('todo');
 
-  var item = document.createElement('li');
+  let item = document.createElement('li');
   item.innerText = text;
 
-  var buttons = document.createElement('div');
+  let buttons = document.createElement('div');
   buttons.classList.add('buttons');
 
   var remove = document.createElement('button');
