@@ -100,14 +100,14 @@ function addItemToDOM(text, completed) {
   let buttons = document.createElement('div');
   buttons.classList.add('buttons');
 
-  var remove = document.createElement('button');
+  let remove = document.createElement('button');
   remove.classList.add('remove');
   remove.innerHTML = removeSVG;
 
   // Add click event for removing the item
   remove.addEventListener('click', removeItem);
 
-  var complete = document.createElement('button');
+  let complete = document.createElement('button');
   complete.classList.add('complete');
   complete.innerHTML = completeSVG;
 
