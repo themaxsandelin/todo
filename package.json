@@ -4,12 +4,21 @@
   "description": "A simple todo list app built in HTML, CSS and JavaScript.",
   "main": "index.js",
   "scripts": {
+<<<<<<< HEAD
     "test": "echo \"Error: no test specified\" && exit 1"
+=======
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "api": "node ./src/index.js"
+>>>>>>> 059077b3183a5057804df9163e8ca1acb6a33116
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/themaxsandelin/todo.git"
   },
+<<<<<<< HEAD
+=======
+  "keywords": [],
+>>>>>>> 059077b3183a5057804df9163e8ca1acb6a33116
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -17,6 +26,12 @@
   },
   "homepage": "https://github.com/themaxsandelin/todo#readme",
   "dependencies": {
+<<<<<<< HEAD
     "express": "^4.17.1"
+=======
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mysql2": "^1.5.2"
+>>>>>>> 059077b3183a5057804df9163e8ca1acb6a33116
   }
 }
