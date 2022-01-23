@@ -16,7 +16,13 @@
     "url": "https://github.com/yessine1mallouli/todo/issues"
   },
   "homepage": "https://github.com/yessine1mallouli/todo#readme",
+<<<<<<< HEAD
   "dependencies": {
     "express": "^4.17.2"
+=======
+  "keywords": [],
+  "dependencies": {
+    "express": "^4.17.1"
+>>>>>>> 00a7eaaa2934ac5d7fc80e83e5421dc1a857967e
   }
 }
