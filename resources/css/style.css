@@ -5,8 +5,10 @@ body {
   padding: 80px 0 0 0;
 }
 
-body, input, button {
-  font-family: 'Roboto', sans-serif;
+body,
+input,
+button {
+  font-family: "Roboto", sans-serif;
 }
 
 .noFill {
@@ -25,8 +27,8 @@ header {
 
   background: #25b99a;
   box-shadow: 0px 2px 4px rgba(44, 62, 80, 0.15);
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
+  /* border-bottom-right-radius: 10px; */
+  /* border-bottom-left-radius: 10px; */
 }
 
 header input {
@@ -68,10 +70,10 @@ header button {
   width: 50px;
   height: 50px;
 
-  position:absolute;
-  top:15px;
-  right:15px;
-  z-index:2;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 2;
 
   border-radius: 25px;
   background: #fff;
@@ -103,16 +105,21 @@ header button svg .fill {
   width: 100%;
   float: left;
   padding: 15px;
+  min-height: 100vh;
 }
 
 ul.todo {
   width: 100%;
   float: left;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 ul.todo li {
-  width: 100%;
-  min-height: 50px;
+  width: 300px;
+  /* min-height: 50px; */
   float: left;
   font-size: 14px;
   font-weight: 500;
@@ -122,10 +129,14 @@ ul.todo li {
   background: #fff;
   border-radius: 5px;
   position: relative;
-  box-shadow: 0px 1px 2px rgba(44, 62, 80, 0.10);
-  margin: 0 0 10px 0;
+  box-shadow: 0px 1px 2px rgba(44, 62, 80, 0.723);
+  /* margin: 0 0 10px 0; */
   padding: 14px 100px 14px 14px;
   word-break: break-word;
+
+  height: 100px;
+  overflow-y: scroll;
+  margin: auto;
 }
 
 ul.todo li:last-of-type {
@@ -157,7 +168,7 @@ ul.todo li .buttons button {
 }
 
 ul.todo li .buttons button:last-of-type:before {
-  content: '';
+  content: "";
   width: 1px;
   height: 30px;
   background: #edf0f1;
@@ -224,7 +235,7 @@ ul.todo#completed {
 }
 
 ul.todo#completed:before {
-  content: '';
+  content: "";
   width: 150px;
   height: 1px;
   background: #d8e5e0;
@@ -237,12 +248,12 @@ ul.todo#completed:before {
 }
 
 ul.todo#todo:empty:after {
-  content: 'You have nothing to-do!';
+  content: "You have nothing to-do!";
   margin: 15px 0 0 0;
 }
 
 ul.todo#completed:empty:after {
-  content: 'You have yet to complete any tasks.';
+  content: "You have yet to complete any tasks.";
 }
 
 ul.todo#todo:after,
