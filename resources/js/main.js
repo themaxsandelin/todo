@@ -25,14 +25,18 @@ document.getElementById('item').addEventListener('keydown', function (e) {
     addItem(value);
   }
 });
-
-function addItem (value) {
-  addItemToDOM(value);
-  document.getElementById('item').value = '';
-
-  data.todo.push(value);
-  dataObjectUpdated();
+function addItem(value) {
+  value = value.trim();
+  
+  // Check if the trimmed value is not empty
+  if (value !== '') {
+    addItemToDOM(value);
+    document.getElementById('item').value = '';
+    data.todo.push(value);
+    dataObjectUpdated();
+  }
 }
+
 
 function renderTodoList() {
   if (!data.todo.length && !data.completed.length) return;
@@ -52,20 +56,32 @@ function dataObjectUpdated() {
   localStorage.setItem('todoList', JSON.stringify(data));
 }
 
+function playDisappearAnimation(item, duration) {
+  var opacity = 1;
+  var interval = 10; 
+  var steps = duration / interval;
+  var opacityStep = 1 / steps;
+
+  var animationInterval = setInterval(function() {
+    opacity -= opacityStep;
+    item.style.opacity = opacity;
+
+    if (opacity <= 0) {
+      clearInterval(animationInterval);
+      var parent = item.parentNode;
+      parent.removeChild(item); 
+    }
+    updateCounter();
+  }, interval);
+}
+
 function removeItem() {
   var item = this.parentNode.parentNode;
-  var parent = item.parentNode;
-  var id = parent.id;
-  var value = item.innerText;
 
-  if (id === 'todo') {
-    data.todo.splice(data.todo.indexOf(value), 1);
-  } else {
-    data.completed.splice(data.completed.indexOf(value), 1);
-  }
-  dataObjectUpdated();
+  // === < ANIMATION DURATION > ====
+  var duration = 800;
 
-  parent.removeChild(item);
+  playDisappearAnimation(item, duration); 
 }
 
 function completeItem() {
@@ -77,10 +93,12 @@ function completeItem() {
   if (id === 'todo') {
     data.todo.splice(data.todo.indexOf(value), 1);
     data.completed.push(value);
-  } else {
+  }
+   else {
     data.completed.splice(data.completed.indexOf(value), 1);
     data.todo.push(value);
   }
+
   dataObjectUpdated();
 
   // Check if the item should be added to the completed list or to re-added to the todo list
@@ -90,12 +108,15 @@ function completeItem() {
   target.insertBefore(item, target.childNodes[0]);
 }
 
-// Adds a new item to the todo list
 function addItemToDOM(text, completed) {
   var list = (completed) ? document.getElementById('completed'):document.getElementById('todo');
 
   var item = document.createElement('li');
   item.innerText = text;
+
+  var counter = document.createElement('div');
+  counter.classList.add('counter');
+  counter.innerHTML = '<h1>0</h1>'; // Initial counter value
 
   var buttons = document.createElement('div');
   buttons.classList.add('buttons');
@@ -117,6 +138,7 @@ function addItemToDOM(text, completed) {
   buttons.appendChild(remove);
   buttons.appendChild(complete);
   item.appendChild(buttons);
+  item.appendChild(counter); // Append counter to the item
 
   list.insertBefore(item, list.childNodes[0]);
 }
