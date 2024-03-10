@@ -15,16 +15,42 @@ renderTodoList();
 document.getElementById('add').addEventListener('click', function() {
   var value = document.getElementById('item').value;
   if (value) {
-    addItem(value);
+    addItem(value + addCompleteFullDate());
   }
 });
 
 document.getElementById('item').addEventListener('keydown', function (e) {
-  var value = this.value;
+  var value = this.value + addCompleteFullDate();
   if ((e.code === 'Enter' || e.code === 'NumpadEnter') && value) {
     addItem(value);
   }
 });
+
+
+// ===== < YYYY-MM-DD > ======
+function addCompleteFullDate() {
+  var currentDate = new Date();
+
+  var year = currentDate.getFullYear();
+  var month = currentDate.getMonth() + 1;
+  var day = currentDate.getDate();
+
+  var formattedDate = '  [' + year + '-' + month.toString().padStart(2, '0') + '-' + day.toString().padStart(2, '0') + ']';
+
+  console.log(formattedDate);
+  return formattedDate;
+}
+
+// ===== < TIME ONLY > ======
+function  addCompleteTimeDate(){
+  var currentDate = new Date();
+  var hours = currentDate.getHours();
+  var minutes = currentDate.getMinutes();
+
+  var formattedTime = '  [' +hours.toString().padStart(2, '0') + ':' + minutes.toString().padStart(2, '0') + ']';
+  return formattedTime;
+}
+
 function addItem(value) {
   value = value.trim();
   
