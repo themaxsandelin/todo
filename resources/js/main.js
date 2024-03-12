@@ -25,14 +25,18 @@ document.getElementById('item').addEventListener('keydown', function (e) {
     addItem(value);
   }
 });
-
-function addItem (value) {
-  addItemToDOM(value);
-  document.getElementById('item').value = '';
-
-  data.todo.push(value);
-  dataObjectUpdated();
+function addItem(value) {
+  value = value.trim();
+  
+  // Check if the trimmed value is not empty
+  if (value !== '') {
+    addItemToDOM(value);
+    document.getElementById('item').value = '';
+    data.todo.push(value);
+    dataObjectUpdated();
+  }
 }
+
 
 function renderTodoList() {
   if (!data.todo.length && !data.completed.length) return;
